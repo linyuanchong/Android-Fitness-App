@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chest"
+    tools:context=".ChestPage">
+
+    <Button
+        android:id="@+id/chestBeginnerButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Chest Beginner"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/chestIntermediateButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="316dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Chest Intermediate"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerChestText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/chestAdvancedButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Chest Advanced"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateChestText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="backHomeFunc"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <TextView
+        android:id="@+id/beginnerChestText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Incline push-ups - x12 \n3) Knee push-ups - x12 \n4) Push-ups - x10 \n5) Wide Arm push-ups - x10 \n6) Hindu Push-ups - x10 \n7) Cobra Stretch - 20s \n8) Chest Stretch - 20s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chestBeginnerButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/intermediateChestText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Knee Push-ups - x12 \n3) Push-ups - x12 \n4) Wide Arm Push-ups - x16 \n5) Hindu Push-ups - x20 \n6) Staggered Push-ups - x22 \n7) Push-up Rotation - x10 \n8) Knee Push-ups - x10 \n9) Decline Push-ups - x12 \n10) Shoulder Stretch - 30s \n11) Cobra Stretch - 30s \n12) Chest Stretch - 30s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chestIntermediateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/advancedChestText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Arm Circles - x20 \n3) Shoulder Stretch - 30s \n4) Burpees - x10 \n5) Staggered Push-ups x32 \n6) Hindu Push-ups - x20 \n7) Push-up Rotation - x24 \n8) Diamond Push-ups - x24 \n9) Box Push-Ups - x24 \n10) Hindu Push-ups - x24 \n11) Spiderman Push-ups - x20 \n12) Decline Push-ups - x12 \n13) Burpees - x10 \n14) Cobra Stretch - 30s \n15) Chest Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chestAdvancedButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/legs"
+    tools:context=".LegsPage">
+
+    <Button
+        android:id="@+id/legsBeginnerButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Legs Beginner"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/legsIntermediateButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="316dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Legs Intermediate"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerLegsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/legsAdvancedButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Legs Advanced"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateLegsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="backHomeFunc"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <TextView
+        android:id="@+id/beginnerLegsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Side Hop - 30s \n2) Squats - x24 \n3) Side-lying Leg Lift - x48 \n4) Backward Lunge - x24 \n5) Donkey Kicks - x32 \n6) Quad Stretch - 60s \n7) Knee to Chest Stretch - 60s \n8) Wall Calf Raises - x24 \n9) Sumo Squat Calf Raise - x12 \n10) Calf Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legsBeginnerButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/intermediateLegsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Squats - x32 \n3) Fire Hydrant - x72 \n4) Lunges - x28 \n5) Side Leg Circles - x48 \n6) Sumo Squat - x48 \n7) Reverse Flutter Kicks - x32 \n8) Wall Sit - 40s \n9) Quad Stretch - 60s \n10) Knee to Chest Stretch - 60s \n11) Calf Raise - x32 \n12) Single Leg Calf Hop - x48 \n10) Calf Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legsIntermediateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/advancedLegsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Burpees - x20 \n2) Squats - x32 \n3) Bottom Leg Lift - x72 \n4) Curtsy Lunges - x32 \n5) Side Leg Circles - x48 \n6) Jumping Squats - x42 \n7) Glute Kick Back - x72 \n8) Wall Sit - 60s \n9) Quad Stretch - 60s \n10) Lying Butterfly Stretch - 30s \n11) Leaning Stretcher Raises - x64 \n12) Wall Resisting Calf Raise - x80 \n10) Calf Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legsAdvancedButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

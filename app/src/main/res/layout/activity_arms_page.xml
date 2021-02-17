@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arms"
+    tools:context=".ArmsPage">
+
+    <Button
+        android:id="@+id/armsBeginnerButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Arms Beginner"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/armsIntermediateButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="316dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Arms Intermediate"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerArmsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/armsAdvancedButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Arms Advanced"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateArmsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="backHomeFunc"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <TextView
+        android:id="@+id/beginnerArmsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Arm Raises - 30s \n2) Triceps Dips - x10 \n3) Arm Circles - 60s \n4) Diamond Push-ups - x6 \n5) Chest Press Pulse - 16s \n6) Diagonal Plank - x10 \n7) Punches - 30s \n8) Leg Barbell - x16 \n9) Triceps Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/armsBeginnerButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/intermediateArmsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Arm Circles - 60s \n2) Floor Tricep Dips - x26 \n3) Military Push-ups - x22 \n4) Push-up Rotation - x22 \n5) Leg Barbells - x24 \n6) Alternating Hooks - 30s \n7) Burpees - x18 \n8) Arm Scissors - 30s \n9) Push-ups - x12 \n10) Triceps Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/armsIntermediateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/advancedArmsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Arm Circles - 60s \n2) Skipping without Ropes - 30s \n3) Leg Barbells - x32 \n4) Burpees - x32 \n5) Arms Curl Crunch - x28 \n6) Floor Tricep Dips - x32 \n7) Military Push-ups - x24 \n8) Shoulder Gators - x32 \n9) Alternating Hooks - 30s \n10) Doorway Curls - x16 \n11) Push-up Low Hold - 30s \n12) Chest Press Pulse - 18s \n13) Push-up Rotation - x12 \n14) Triceps Stretch - 60s \n15) Standing Biceps Stretch - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/armsAdvancedButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
