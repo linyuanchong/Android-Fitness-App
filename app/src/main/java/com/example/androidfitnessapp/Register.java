@@ -36,6 +36,7 @@ public class Register extends AppCompatActivity {
     TextView rLoginButton;
     ProgressBar rProgressBar;
     FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
     String userID;
 
     @Override
@@ -53,6 +54,7 @@ public class Register extends AppCompatActivity {
         rProgressBar    = findViewById(R.id.rProgressBar);
         //Create firebase instance.
         fAuth           = FirebaseAuth.getInstance();
+        fStore          = FirebaseFirestore.getInstance();
 
         //If user not exist.
         if(fAuth.getCurrentUser() != null){
@@ -70,7 +72,6 @@ public class Register extends AppCompatActivity {
                 final String fullName           = rFullName.getText().toString();
                 final String phone              = rPhone.getText().toString();
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference usersRef      = database.getReference("users");
 
                 //Error detections.
                 if(TextUtils.isEmpty(email)){
@@ -96,9 +97,23 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this, "User Created successfully.", Toast.LENGTH_SHORT).show();
 
-                            Map<String, User> users = new HashMap<>();
-                            users.put(fullName, new User(email, password, fullName, phone));
-                            usersRef.setValue(users);
+                            //Set userID.
+                            userID = fAuth.getCurrentUser().getUid();
+                            //Get "users" reference.
+                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            //Create and store data using hashmap.
+                            Map<String, Object> user = new HashMap<>();
+                            //Store values into user hashmap.
+                            user.put("e_mail", email);
+                            user.put("pass_word", password);
+                            user.put("full_name", fullName);
+                            user.put("p_hone", phone);
+                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    System.out.println("successfully created new user" + userID);
+                                }
+                            });
                             
                             startActivity(new Intent(getApplicationContext(), LandingPage.class));
                         }
@@ -119,19 +134,6 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
-
-    }
-
-    public static class User {
-
-        public String email;
-        public String password;
-        public String fullName;
-        public String phone;
-
-        public User(String email, String password, String fullName, String phone) {
-            // ...
-        }
 
     }
 }
