@@ -3,6 +3,7 @@ package com.example.androidfitnessapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +15,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
@@ -55,12 +65,12 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Get text from editTexts.
-                final String email = rEmail.getText().toString().trim();
-                String password = rPassword.getText().toString().trim();
-                final String fullName = rFullName.getText().toString();
-                final String phone    = rPhone.getText().toString();
-
-
+                final String email              = rEmail.getText().toString().trim();
+                String password                 = rPassword.getText().toString().trim();
+                final String fullName           = rFullName.getText().toString();
+                final String phone              = rPhone.getText().toString();
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference usersRef      = database.getReference("users");
 
                 //Error detections.
                 if(TextUtils.isEmpty(email)){
@@ -85,6 +95,11 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this, "User Created successfully.", Toast.LENGTH_SHORT).show();
+
+                            Map<String, User> users = new HashMap<>();
+                            users.put(fullName, new User(email, password, fullName, phone));
+                            usersRef.setValue(users);
+                            
                             startActivity(new Intent(getApplicationContext(), LandingPage.class));
                         }
                         else {
@@ -104,6 +119,19 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
+
+    }
+
+    public static class User {
+
+        public String email;
+        public String password;
+        public String fullName;
+        public String phone;
+
+        public User(String email, String password, String fullName, String phone) {
+            // ...
+        }
 
     }
 }
