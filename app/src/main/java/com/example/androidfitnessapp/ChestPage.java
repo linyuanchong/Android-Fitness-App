@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.androidfitnessapp.ui.chestBeginnerPage;
+
 public class ChestPage extends AppCompatActivity {
 
     //Declare variables.
@@ -36,6 +38,13 @@ public class ChestPage extends AppCompatActivity {
         beginnerChestText.setMovementMethod(new ScrollingMovementMethod());
         intermediateChestText.setMovementMethod(new ScrollingMovementMethod());
         advancedChestText.setMovementMethod(new ScrollingMovementMethod());
+
+        // on click beginner workout - open new intent
+        chestBeginnerButton.setOnClickListener(new View.OnClickListener(){
+           public void onClick(View v){
+               startActivity(new Intent(ChestPage.this, chestBeginnerPage.class));
+           }
+        });
     }
 
     public void backHomeFunc(View view) {
