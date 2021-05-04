@@ -5,6 +5,7 @@ Fitness Applictaion - Group Project 2021
 
 by 
  {
+ 	
 
  }
 
@@ -30,9 +31,6 @@ Use cases for role 'USER' - a login by any system user
 
 ![Completed](https://img.shields.io/badge/done-Success-green)
 
-
-      
-![Completed](https://img.shields.io/badge/done-partial-orange)
 
 
 ![Completed](https://img.shields.io/badge/done-Success-green)
