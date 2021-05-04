@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/abs"
+    tools:context=".AbsPage">
+
+    <Button
+        android:id="@+id/absBeginnerButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Abs Beginner"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/absIntermediateButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="316dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Abs Intermediate"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerAbsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/absAdvancedButton"
+        android:layout_width="380dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:onClick="backHomeFunc"
+        android:text="Abs Advanced"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateAbsText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="backHomeFunc"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <TextView
+        android:id="@+id/beginnerAbsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 20s \n2) Abdominal crunches - x16 \n3) Russian Twist - x20 \n4) Mountain Climber - x16 \n5) Heel Touch - x20 \n6) Leg Raises - x16 \n7) Plank - 30s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/absBeginnerButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/intermediateAbsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Heel Touch - x26 \n3) Crossover Crunch - x20 \n4) Mountain Climber - x20 \n5) Side Bridges - x24 \n6) Butt Bridge - x20 \n7) V-Up - x20 \n8) Heel Touch - x26 \n9) Bicycle Crunches - x20 \n10) Plank - 30s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/absIntermediateButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/advancedAbsText"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Side Bridges - x40 \n3) Sit-ups - x20 \n4) Abdominal Crunches - x30 \n5) Bicycle Crunches - x24 \n6) Side Plank - 20s \n7) V-Up - x20 \n8) Push-up Rotation - x24 \n9) Russian Twist - x48 \n10) Abdominal Crunches - x28 \n11) Butt Bridge - x20 \n12) Heel Touch - x34 \n13) Mountain Climber - x20 \n14) Crossover Crunch - x24 \n15) Plank - 60s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/absAdvancedButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
