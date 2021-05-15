@@ -1,6 +1,11 @@
 package com.example.androidfitnessapp;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -17,6 +22,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.Calendar;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -40,6 +47,8 @@ public class LandingPage extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+//        createNotificationChannel();
     }
 
     @Override
@@ -81,4 +90,37 @@ public class LandingPage extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), LegsPage.class));
         finish();
     }
+
+//    private void createNotificationChannel() {
+//
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+//            CharSequence name = "UserReminderChannel";
+//            String description = "Basic notification for user";
+//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+//            NotificationChannel channel = new NotificationChannel("notifyUser", name, importance);
+//            channel.setDescription(description);
+//
+//            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+//            notificationManager.createNotificationChannel(channel);
+//
+//            Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+//            PendingIntent pendingIntent = PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
+//
+//            AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+//
+//            long currentTime = System.currentTimeMillis();
+//            long tenSecondNotify = 1000 * 10;
+//
+//            Calendar date = Calendar.getInstance();
+//            date.setTimeInMillis(System.currentTimeMillis());
+//            date.add(Calendar.MINUTE, 1);
+//            date.set(Calendar.SECOND, 0);
+//
+//            long triggerAt = date.getTimeInMillis();
+//            long repeatAfter = 60 * 1000;
+//
+//            //alarmManager.set(AlarmManager.RTC_WAKEUP, currentTime + tenSecondNotify, pendingIntent);
+//            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
+//        }
+//    }
 }

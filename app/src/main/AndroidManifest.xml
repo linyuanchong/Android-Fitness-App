@@ -14,20 +14,9 @@
         <activity android:name=".ChestPage" />
         <activity android:name=".AbsPage" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".chestBeginnerPage" />
         <activity
             android:name=".LandingPage"
-            android:label="@string/title_activity_landing_page"
-            android:theme="@style/Theme.AndroidFitnessApp.NoActionBar" />
-        <activity
-            android:name=".LandingPage"
-            android:label="@string/title_activity_landing_page"
-            android:theme="@style/Theme.AndroidFitnessApp.NoActionBar" />
-        <activity
-            android:name=".LandingPage"
-            android:label="@string/title_activity_landing_page"
-            android:theme="@style/Theme.AndroidFitnessApp.NoActionBar" />
-        <activity
-            android:name=".ui.LandingPage"
             android:label="@string/title_activity_landing_page"
             android:theme="@style/Theme.AndroidFitnessApp.NoActionBar" />
         <activity android:name=".Login" />
@@ -38,6 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".NotifyReceiver"/>
 
         <meta-data
             android:name="preloaded_fonts"
