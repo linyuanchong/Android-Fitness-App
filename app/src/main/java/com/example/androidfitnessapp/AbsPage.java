@@ -10,20 +10,12 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-<<<<<<< Updated upstream
-import com.google.android.gms.tasks.OnSuccessListener;
-=======
->>>>>>> Stashed changes
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-<<<<<<< Updated upstream
-import java.util.HashMap;
 import java.util.Map;
 
-=======
->>>>>>> Stashed changes
 public class AbsPage extends AppCompatActivity {
 
     //Declare variables.
@@ -45,11 +37,6 @@ public class AbsPage extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userID;
 
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    String userID;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +49,6 @@ public class AbsPage extends AppCompatActivity {
         beginnerAbsText             = findViewById(R.id.beginnerAbsText);
         intermediateAbsText         = findViewById(R.id.intermediateAbsText);
         advancedAbsText             = findViewById(R.id.advancedAbsText);
-<<<<<<< Updated upstream
-=======
         //Radio buttons.
         mondayRB                        = findViewById(R.id.mondayRB);
         tuesdayRB                       = findViewById(R.id.tuesdayRB);
@@ -73,7 +58,6 @@ public class AbsPage extends AppCompatActivity {
         saturdayRB                      = findViewById(R.id.saturdayRB);
         sundayRB                        = findViewById(R.id.sundayRB);
 
->>>>>>> Stashed changes
         //Create firebase instance.
         fAuth           = FirebaseAuth.getInstance();
         fStore          = FirebaseFirestore.getInstance();
@@ -82,11 +66,6 @@ public class AbsPage extends AppCompatActivity {
         intermediateAbsText.setMovementMethod(new ScrollingMovementMethod());
         advancedAbsText.setMovementMethod(new ScrollingMovementMethod());
 
-<<<<<<< Updated upstream
-        absBeginnerButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-=======
         //Alter workout programme.
         absBeginnerButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -124,24 +103,11 @@ public class AbsPage extends AppCompatActivity {
         absIntermediateButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
-                final String intermediateAbsSaveText = intermediateAbsText.getText().toString().trim();
->>>>>>> Stashed changes
+                final String intermediateAbsSaveText = beginnerAbsText.getText().toString().trim();
                 //Set userID.
                 userID = fAuth.getCurrentUser().getUid();
                 //Get "users" reference.
                 DocumentReference documentReference = fStore.collection("users").document(userID);
-<<<<<<< Updated upstream
-                //Create and store data using hashmap.
-                Map<String, Object> user = new HashMap<>();
-                //Store values into user hashmap.
-                user.put("workout_list", beginnerAbsText.toString());
-                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        System.out.println("successfully created new user" + userID);
-                    }
-                });
-=======
 
                 if (mondayRB.isChecked()) {
                     documentReference.update("workout_list_monday", intermediateAbsSaveText);
@@ -197,7 +163,6 @@ public class AbsPage extends AppCompatActivity {
                 else if (sundayRB.isChecked()) {
                     documentReference.update("workout_list_sunday", advancedAbsSaveText);
                 }
->>>>>>> Stashed changes
             }
         });
     }
