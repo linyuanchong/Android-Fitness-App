@@ -5,14 +5,21 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,17 +31,35 @@ import androidx.appcompat.widget.Toolbar;
 
 public class LandingPage extends AppCompatActivity {
 
+    Toolbar toolbar;
+    DrawerLayout drawer;
+    NavigationView navigationView;
+
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
+
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        //Link variables to components.
+        toolbar                         = findViewById(R.id.toolbar);
+        drawer                          = findViewById(R.id.drawer_layout);
+        navigationView                  = findViewById(R.id.nav_view);
+
+        //Create firebase instance.
+        fAuth           = FirebaseAuth.getInstance();
+        fStore          = FirebaseFirestore.getInstance();
+
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        //Set userID.
+        userID = fAuth.getCurrentUser().getUid();
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

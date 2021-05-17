@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blackwood"
+    android:background="@drawable/blackbrick"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <Button
@@ -88,6 +88,7 @@
         android:id="@+id/accountPageUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/abeezee"
         android:gravity="center"
         android:text="(USERNAME HERE)"
@@ -97,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountPageTitle"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/accountPageEmail"
