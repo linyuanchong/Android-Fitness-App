@@ -108,6 +108,13 @@ public class Register extends AppCompatActivity {
                             user.put("pass_word", password);
                             user.put("full_name", fullName);
                             user.put("p_hone", phone);
+                            user.put("workout_list_monday", "");
+                            user.put("workout_list_tuesday", "");
+                            user.put("workout_list_wednesday", "");
+                            user.put("workout_list_thursday", "");
+                            user.put("workout_list_friday", "");
+                            user.put("workout_list_saturday", "");
+                            user.put("workout_list_sunday", "");
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

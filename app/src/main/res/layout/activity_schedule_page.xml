@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackwood"
+    tools:context=".SchedulePage">
+
+    <TextView
+        android:id="@+id/mondaySchedule"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:scrollbars="vertical"
+        android:text="1) Jumping Jacks - 30s \n2) Incline push-ups - x12 \n3) Knee push-ups - x12 \n4) Push-ups - x10 \n5) Wide Arm push-ups - x10 \n6) Hindu Push-ups - x10 \n7) Cobra Stretch - 20s \n8) Chest Stretch - 20s"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+</androidx.constraintlayout.widget.ConstraintLayout>
