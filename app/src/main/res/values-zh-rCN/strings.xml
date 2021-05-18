@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidFitnessApp</string>
+    <string name="email">电子邮件</string>
+    <string name="password">密码</string>
+    <string name="register">登记</string>
+    <string name="nRegistred">建立新帐户</string>
+    <string name="alRegistred">已经登记了？ 这里登录</string>
+    <string name="fNAme">全名</string>
+    <string name="phone">电话</string>
+    <string name="createNAccount">建立新帐户</string>
+    <string name="login">登录</string>
+    <string name="settings_title">设定值</string>
+    <string name="settings_profile_title">轮廓</string>
+    <string name="settings_edit_profile">编辑个人资料</string>
+    <string name="settings_reset_password">重设密码</string>
+    <string name="settings_notifications">通知事项</string>
+    <string name="settings_regional">区域性</string>
+    <string name="settings_language">语</string>
+    <string name="settings_logout">登出</string>
+    <string name="account_title">您的账户资料</string>
+    <string name="account_button_change">改变</string>
+    <string name="account_usernameHolder">用户名</string>
+    <string name="account_emailHolder">电子邮件</string>
+    <string name="account_phoneHolder">电话号码</string>
+    <string name="navH_title">Android Fitness应用程序</string>
+    <string name="workout_title">选择锻炼</string>
+    <string name="navH_email">email@ggg.com</string>
+    <string name="workout_chest">胸部</string>
+    <string name="workout_arms">武器</string>
+    <string name="workout_abs">腹肌</string>
+    <string name="workout_legs">腿部</string>
+    <string name="workout_logout">登出</string>
+    <string name="sM_home">家</string>
+    <string name="sM_account">我的帐户</string>
+    <string name="sM_schedule">我的日程表</string>
+    <string name="sM_settings">设定值</string>
+    <string name="sM_logout">登出</string>
+</resources>

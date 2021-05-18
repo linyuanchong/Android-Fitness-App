@@ -5,14 +5,8 @@ Fitness Applictaion - Group Project 2021
 
 by 
  {
-<<<<<<< HEAD
  	
- test 1 
-=======
- 	Flaviu
->>>>>>> 651491882f83e4a9f0a9dca41134dcb72764099b
 
- sss
  }
 
 

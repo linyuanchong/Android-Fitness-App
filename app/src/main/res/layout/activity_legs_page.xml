@@ -7,6 +7,72 @@
     android:background="@drawable/legs"
     tools:context=".LegsPage">
 
+    <RadioGroup
+        android:layout_width="361dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.7"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advancedLegsText"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/mondayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Mo"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/tuesdayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/wednesdayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/thursdayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Th"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/fridayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fr"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/saturdayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sa"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/sundayRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Su"
+            android:textColor="@color/black" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/legsBeginnerButton"
         android:layout_width="380dp"
