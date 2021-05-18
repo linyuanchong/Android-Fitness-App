@@ -14,7 +14,7 @@ public class NotifyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyUser")
                 .setSmallIcon(android.R.drawable.sym_def_app_icon)
-                .setContentTitle("User reminder")
+                .setContentTitle("Workout reminder")
                 .setContentText("Visit the app to start working out")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 

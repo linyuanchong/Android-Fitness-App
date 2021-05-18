@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "UserReminderChannel";
-            String description = "Basic notification for user";
+            String description = "Visit the app and check workout schedule";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("notifyUser", name, importance);
             channel.setDescription(description);
@@ -41,14 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
             Calendar date = Calendar.getInstance();
             date.setTimeInMillis(System.currentTimeMillis());
-            date.add(Calendar.MINUTE, 1);
-            date.set(Calendar.SECOND, 0);
+            date.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_WEEK_IN_MONTH), 7, 0);
 
             long triggerAt = date.getTimeInMillis();
-            long repeatAfter = 60 * 1000;
+//            long repeatAfter = 60 * 1000;
 
-            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAt + repeatAfter, pendingIntent);
-//            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
+//            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAt + repeatAfter, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, AlarmManager.INTERVAL_DAY, pendingIntent);
         }
     }
 }
