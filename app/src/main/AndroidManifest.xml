@@ -12,12 +12,13 @@
         <activity
             android:name=".AccountPage"
             android:label="@string/title_activity_account_page"
-            android:theme="@style/Theme.AndroidFitnessApp.NoActionBar"></activity>
+            android:theme="@style/Theme.AndroidFitnessApp.NoActionBar" />
         <activity android:name=".LegsPage" />
         <activity android:name=".ArmsPage" />
         <activity android:name=".ChestPage" />
         <activity android:name=".AbsPage" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".ChestBeginnerPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

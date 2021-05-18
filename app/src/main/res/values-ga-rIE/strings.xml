@@ -3,66 +3,60 @@
 
     <!-- Basic -->
 
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="register">Register</string>
-    <string name="nRegistred">Create new account</string>
-    <string name="alRegistred">Already registred? Login Here</string>
+    <string name="email">Ríomhphost</string>
+    <string name="password">Pasfhocal</string>
+    <string name="register">Cláraigh</string>
+    <string name="nRegistred">Cruthaigh cuntas nua</string>
+    <string name="alRegistred">Cláraithe cheana? Logáil Isteach anseo</string>
 
-    <string name="fNAme">Full Name</string>
-    <string name="phone">Phone</string>
+    <string name="fNAme">Ainm iomlán</string>
+    <string name="phone">Fón</string>
 
-    <string name="createNAccount">Create New Account</string>
-    <string name="login">Login</string>
+    <string name="createNAccount">Cruthaigh Cuntas Nua</string>
+    <string name="login">Logáil isteach</string>
 
     <!-- Settings -->
-    <string name="settings_title">Settings</string>
+    <string name="settings_title">Socruithe</string>
 
-    <string name="settings_profile_title">Profile</string>
-    <string name="settings_edit_profile">Edit Profile</string>
-    <string name="settings_reset_password">Reset Password</string>
+    <string name="settings_profile_title">Próifíl</string>
+    <string name="settings_edit_profile">Cuir Próifíl in Eagar</string>
+    <string name="settings_reset_password">Athshocraigh Pasfhocal</string>
 
-    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications">Fógraí</string>
 
-    <string name="settings_regional">Regional</string>
-    <string name="settings_language">Language</string>
-    <string name="settings_logout">Logout</string>
+    <string name="settings_regional">Réigiúnach</string>
+    <string name="settings_language">Teanga</string>
+    <string name="settings_logout">Logáil Amach</string>
 
 
     <!-- Account -->
-    <string name="account_title">Your account details</string>
-    <string name="account_button_change">Change</string>
+    <string name="account_title">Sonraí do chuntais</string>
+    <string name="account_button_change">Athraigh</string>
 
-    <string name="account_usernameHolder">username</string>
-    <string name="account_emailHolder">email</string>
-    <string name="account_phoneHolder">phone number</string>
+    <string name="account_usernameHolder">ainm úsáideora</string>
+    <string name="account_emailHolder">ríomhphost</string>
+    <string name="account_phoneHolder">uimhir teileafón</string>
 
     <!-- Navigation Header -->
-    <string name="navH_title">Android Fitness Application</string>
+    <string name="navH_title">Feidhmchlár Aclaíochta Android</string>
     <string name="navH_email">email@ggg.com</string>
 
 
     <!-- Workout Select -->
-    <string name="workout_title">Select a Workout</string>
+    <string name="workout_title">Roghnaigh Workout</string>
 
-    <string name="workout_chest">Chest</string>
-    <string name="workout_arms">Arms</string>
+    <string name="workout_chest">Cliabh</string>
+    <string name="workout_arms">Armas</string>
     <string name="workout_abs">Abs</string>
-    <string name="workout_legs">Legs</string>
-    <string name="workout_logout">Logout</string>
+    <string name="workout_legs">Cosa</string>
+    <string name="workout_logout">Logáil Amach</string>
 
     <!-- Side Menu -->
-    <string name="sM_home">Home</string>
-    <string name="sM_account">My Account</string>
-    <string name="sM_schedule">My Schedule</string>
-    <string name="sM_settings">Settings</string>
-    <string name="sM_logout">Logout</string>
-
-
-
-
-
-
+    <string name="sM_home">Baile</string>
+    <string name="sM_account">Mo chuntas</string>
+    <string name="sM_schedule">Mo Sceideal</string>
+    <string name="sM_settings">Socruithe</string>
+    <string name="sM_logout">Logáil Amach</string>
 
 
 
