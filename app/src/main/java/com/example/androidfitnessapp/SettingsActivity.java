@@ -61,17 +61,17 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int i) {
                 if( i == 0) {
                     //english
-                    setLocae("en");
+                    setLocale("en");
                     recreate();
                 }
                 else if( i == 1) {
                     //irish
-                    setLocae("ga-rIE");
+                    setLocale("ga-rIE");
                     recreate();
                 }
                 else if( i == 2) {
                     //malay
-                    setLocae("CH");
+                    setLocale("CH");
                     recreate();
                 }
 
@@ -85,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    private void setLocae(String lang) {
+    private void setLocale(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
@@ -102,7 +102,7 @@ public class SettingsActivity extends AppCompatActivity {
     {
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = prefs.getString("My_Language","");
-        setLocae(language);
+        setLocale(language);
     }
 
 

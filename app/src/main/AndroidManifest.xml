@@ -18,6 +18,7 @@
         <activity android:name=".ArmsPage" />
         <activity android:name=".ChestPage" />
         <activity android:name=".AbsPage" />
+        <activity android:name=".SettingsActivity" />
         <activity
             android:name=".LandingPage"
             android:label="@string/title_activity_landing_page"
