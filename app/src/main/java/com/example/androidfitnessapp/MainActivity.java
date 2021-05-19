@@ -6,6 +6,7 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createNotificationChannel();
+//        createNotificationChannel();
     }
 
     private void createNotificationChannel() {
@@ -34,23 +35,26 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
 
+            AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
             Intent intent = new Intent(MainActivity.this, NotifyReceiver.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, PendingIntent.FLAG_NO_CREATE);
 
-            AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 
             Calendar date = Calendar.getInstance();
             date.setTimeInMillis(System.currentTimeMillis());
+            // setting the date to current day and 7am
 //            date.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_WEEK_IN_MONTH), 7, 0);
             date.add(Calendar.MINUTE, 1);
             date.set(Calendar.SECOND, 0);
 
+            // variables to trigger repeating notifications every minute
             long triggerAt = date.getTimeInMillis();
             long repeatAfter = 60 * 1000;
 
-//            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAt + repeatAfter, pendingIntent);
-//            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, AlarmManager.INTERVAL_DAY, pendingIntent);
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerAt, repeatAfter, pendingIntent);
+            // repeating notifications in 1 minute interval
+            alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAt + repeatAfter, pendingIntent);
+            // repeating notification everyday
+//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, date, AlarmManager.INTERVAL_DAY, pendingIntent);
         }
     }
 }

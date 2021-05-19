@@ -48,7 +48,8 @@ public class LandingPage extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-//        createNotificationChannel();
+        createNotificationChannelDaily();
+        createNotificationChannelMinute();
     }
 
     @Override
@@ -91,36 +92,63 @@ public class LandingPage extends AppCompatActivity {
         finish();
     }
 
-//    private void createNotificationChannel() {
-//
-//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-//            CharSequence name = "UserReminderChannel";
-//            String description = "Basic notification for user";
-//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-//            NotificationChannel channel = new NotificationChannel("notifyUser", name, importance);
-//            channel.setDescription(description);
-//
-//            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-//            notificationManager.createNotificationChannel(channel);
-//
-//            Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
-//            PendingIntent pendingIntent = PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
-//
-//            AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-//
-//            long currentTime = System.currentTimeMillis();
-//            long tenSecondNotify = 1000 * 10;
-//
-//            Calendar date = Calendar.getInstance();
-//            date.setTimeInMillis(System.currentTimeMillis());
-//            date.add(Calendar.MINUTE, 1);
-//            date.set(Calendar.SECOND, 0);
-//
-//            long triggerAt = date.getTimeInMillis();
-//            long repeatAfter = 60 * 1000;
-//
-//            //alarmManager.set(AlarmManager.RTC_WAKEUP, currentTime + tenSecondNotify, pendingIntent);
-//            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
-//        }
-//    }
+    private void createNotificationChannelDaily() {
+        Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+        PendingIntent pendingIntent =
+                PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        createNotificationChannel();
+        // creating Calendar instance
+        Calendar date = Calendar.getInstance();
+        date.setTimeInMillis(System.currentTimeMillis());
+        // setting the date to current day and 7am
+        date.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH),
+                date.get(Calendar.DAY_OF_WEEK_IN_MONTH), 13, 17);
+        // variables to trigger repeating notifications every minute
+        long triggerAt = date.getTimeInMillis();
+        // repeating notification everyday
+        alarmManager.setRepeating(AlarmManager.RTC, triggerAt, AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
+    private void createNotificationChannelMinute() {
+
+        Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+        PendingIntent pendingIntent =
+                PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        createNotificationChannel();
+        // creating Calendar instance
+        Calendar date = Calendar.getInstance();
+        date.setTimeInMillis(System.currentTimeMillis());
+        // setting the date to current day and 7am
+        date.add(Calendar.MINUTE, 1);
+        date.set(Calendar.SECOND, 0);
+        // variables to trigger repeating notifications every minute
+        long triggerAt = date.getTimeInMillis();
+        long repeatAfter = 60 * 1000;
+        // repeating notifications in 1 minute interval
+        alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
+    }
+
+    public void createNotificationChannel() {
+        CharSequence name = "UserReminderChannel";
+        String description = "Basic notification for user";
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            channel = new NotificationChannel("notifyUser", name, importance);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            channel.setDescription(description);
+        }
+
+        NotificationManager notificationManager = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            notificationManager = getSystemService(NotificationManager.class);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 }
