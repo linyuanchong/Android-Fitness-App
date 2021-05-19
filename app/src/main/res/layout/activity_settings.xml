@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBodyColor"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            style="@style/viewParent.headerText"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                style="@style/viewParent.headerText"
+                android:text="@string/temp_username"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                style="@style/viewParent.headerText"
+                android:text="@string/edit_personal_details"
+                android:textSize="16sp"
+                android:textColor="#5D5C5C"
+                android:layout_below="@id/usernameTextView"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/an_text"
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/settings_title"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:id="@+id/EditProfileButton"
+            android:text="@string/settings_edit_profile"
+            app:drawableLeftCompat="@drawable/ic_edit_profile" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/settings_notifications"/>
+
+        <Switch
+            style="@style/settingsText"
+            android:checked="true"
+            android:drawableLeft="@drawable/ic_notifications"
+            android:text="@string/settings_notifications"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/settings_regional"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:id="@+id/Language"
+            android:drawableLeft="@drawable/ic_languages"
+            android:text="@string/settings_language" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:id="@+id/logoutButton"
+            android:drawableLeft="@drawable/ic_logout"
+            android:text="@string/settings_logout" />
+
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="App ver 1.0.1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
+</ScrollView>

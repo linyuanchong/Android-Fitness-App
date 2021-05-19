@@ -1,6 +1,11 @@
 package com.example.androidfitnessapp;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +33,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.Calendar;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -85,6 +92,9 @@ public class LandingPage extends AppCompatActivity {
                 else if (id==R.id.nav_schedule){
                     startActivity(new Intent(getApplicationContext(), SchedulePage.class));
                 }
+                else if (id==R.id.nav_settings){
+                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                }
                 else if (id==R.id.nav_logout){
                     FirebaseAuth.getInstance().signOut();//logout
                     startActivity(new Intent(getApplicationContext(), Login.class));
@@ -97,6 +107,8 @@ public class LandingPage extends AppCompatActivity {
                 return true;
             }
         });
+
+        createNotificationChannel();
     }
 
     @Override
@@ -137,5 +149,58 @@ public class LandingPage extends AppCompatActivity {
     public void toLegsPage(View view) {
         startActivity(new Intent(getApplicationContext(), LegsPage.class));
         finish();
+    }
+    private void createNotificationChannel() {
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "UserReminderChannel";
+            String description = "Basic notification for user";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyUser", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+            Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
+
+            AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+
+
+//          Calendar date = Calendar.getInstance();
+//          date.setTimeInMillis(System.currentTimeMillis());
+//          setting the date to current day and 7am
+//          date.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_WEEK_IN_MONTH), 7, 0);
+//          date.add(Calendar.MINUTE, 1);
+//          date.set(Calendar.SECOND, 0);
+
+//          variables to trigger repeating notifications every minute
+//          long triggerAt = date.getTimeInMillis();
+//          long repeatAfter = 60 * 1000;
+
+//          repeating notifications in 1 minute interval
+//          alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
+//          repeating notification everyday
+//          alarmManager.setRepeating(AlarmManager.RTC, date, AlarmManager.INTERVAL_DAY, pendingIntent);
+
+
+            Calendar date = Calendar.getInstance();
+            date.setTimeInMillis(System.currentTimeMillis());
+//          setting the date to current day and 7am
+            date.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_WEEK_IN_MONTH), 13, 17);
+//          date.add(Calendar.MINUTE, 1);
+//          date.set(Calendar.HOUR, 13);
+//          date.set(Calendar.MINUTE, 15);
+
+//          variables to trigger repeating notifications every minute
+            long triggerAt = date.getTimeInMillis();
+            long repeatAfter = 60 * 1000;
+
+//          repeating notifications in 1 minute interval
+//          alarmManager.setRepeating(AlarmManager.RTC, triggerAt, repeatAfter, pendingIntent);
+//          repeating notification everyday
+            alarmManager.setRepeating(AlarmManager.RTC, triggerAt, AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
     }
 }
