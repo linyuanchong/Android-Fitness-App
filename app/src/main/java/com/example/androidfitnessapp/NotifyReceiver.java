@@ -17,7 +17,8 @@ public class NotifyReceiver extends BroadcastReceiver {
                 .setSmallIcon(android.R.drawable.sym_def_app_icon)
                 .setContentTitle("Workout reminder")
                 .setContentText("Visit the app to start working out")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
         notificationManager.notify(200, builder.build());

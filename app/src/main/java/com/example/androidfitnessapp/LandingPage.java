@@ -94,6 +94,7 @@ public class LandingPage extends AppCompatActivity {
 
     private void createNotificationChannelDaily() {
         Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent =
                 PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
@@ -113,6 +114,7 @@ public class LandingPage extends AppCompatActivity {
     private void createNotificationChannelMinute() {
 
         Intent intent = new Intent(LandingPage.this, NotifyReceiver.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent =
                 PendingIntent.getBroadcast(LandingPage.this, 0, intent, 0);
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
