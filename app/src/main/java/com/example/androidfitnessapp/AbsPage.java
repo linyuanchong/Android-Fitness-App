@@ -103,7 +103,7 @@ public class AbsPage extends AppCompatActivity {
         absIntermediateButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
-                final String intermediateAbsSaveText = beginnerAbsText.getText().toString().trim();
+                final String intermediateAbsSaveText = intermediateAbsText.getText().toString().trim();
                 //Set userID.
                 userID = fAuth.getCurrentUser().getUid();
                 //Get "users" reference.
